@@ -1,9 +1,9 @@
 import random, re, copy as cp
 print("Матрица состоит из нулей и единиц. Найдите в ней самую длинную цепочку подряд идущих нулей по горизонтали, вертикали или диагонали.\n")
- 
+  
 n = random.randint(3,7)
 m = random.randint(3,7)
-
+ 
 def printArr(arr):
     for row in arr:
         s = ''
