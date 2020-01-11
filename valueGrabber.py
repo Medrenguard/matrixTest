@@ -9,7 +9,6 @@ f2 = open('dump.txt', 'r', encoding='utf-8')
 dump = f2.readlines()
 f2.close()
 
-
 if len(sys.argv) > 1:
     if sys.argv[1] == 'test':
         testresults = []
@@ -20,7 +19,10 @@ if len(sys.argv) > 1:
         for i in range(len(testresults)):
             if testresults[i][0] == 1: partSuccessTesting += 1
             print(testresults[i][1])
-        print("\nPercentage of successful tests:", partSuccessTesting/len(testresults)*100, "%\n")
+        percentSuccessTesting = partSuccessTesting/len(testresults)*100
+        print("\nPercentage of successful tests:", percentSuccessTesting, "%\n")
+        if percentSuccessTesting < 100:
+            raise ArithmeticError("Low percentage of successful tests.")
 
 achieversCount = 0
 
