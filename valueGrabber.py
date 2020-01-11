@@ -10,16 +10,17 @@ dump = f2.readlines()
 f2.close()
 
 
-if sys.argv[1] == 'test':
-    testresults = []
-    if sys.argv[2] == 'main':
-        testresults.append(test.maintest(scheme, dump))
+if len(sys.argv) > 1:
+    if sys.argv[1] == 'test':
+        testresults = []
+        if sys.argv[2] == 'main':
+            testresults.append(test.maintest(scheme, dump))
         
-partSuccessTesting = 0
-for i in range(len(testresults)):
-    if testresults[i][0] == 1: partSuccessTesting += 1
-    print(testresults[i][1])
-print("\nPercentage of successful tests:", partSuccessTesting/len(testresults)*100, "%\n")
+        partSuccessTesting = 0
+        for i in range(len(testresults)):
+            if testresults[i][0] == 1: partSuccessTesting += 1
+            print(testresults[i][1])
+        print("\nPercentage of successful tests:", partSuccessTesting/len(testresults)*100, "%\n")
 
 achieversCount = 0
 
